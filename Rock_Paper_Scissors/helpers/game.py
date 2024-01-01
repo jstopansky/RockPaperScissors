@@ -9,8 +9,8 @@ class Game:
         self.user_player.get_name()
         self.user_player.make_choice()
         
-        print(f"You chose {self.user_player.player_choice}")
-        print(f"Your opponent chose {self.computer_player.player_choice}")
+        print(f"You chose {self.user_player.player_choice.capitalize()}")
+        print(f"Your opponent chose {self.computer_player.player_choice.capitalize()}")
 
         if self.user_player.player_choice == self.computer_player.player_choice:
             self.winner = "Tie"

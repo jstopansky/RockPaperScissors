@@ -1,9 +1,17 @@
 import random as random
 
-possible_choices = ["rock", "paper", "scissors"]
+# possible_choices = ["rock", "paper", "scissors"]
+possible_choices = {
+    "rock": "rock",
+    "paper": "paper",
+    "scissors": "scissors",
+    "r": "rock",
+    "p": "paper",
+    "s": "scissors"
+}
 
 class Player:
-    def __init__(self,player_name="Oponnent",player_choice=random.choice(possible_choices)):
+    def __init__(self,player_name="Oponnent",player_choice=random.choice(list(possible_choices.values()))):
         self.player_name = player_name
         self.player_choice = player_choice
     def get_name(self):
@@ -20,7 +28,7 @@ class Player:
             if chooses not in possible_choices:
                 print("That is not a valid choice. Please choose again.")
             else:
-                self.player_choice = chooses
+                self.player_choice = possible_choices[chooses]
                 break
     def make_winner(self):
         self.is_winner = True
