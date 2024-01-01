@@ -2,37 +2,37 @@ from .player import Player
 
 class Game:
     def __init__(self):
-        self.userPlayer = Player()
-        self.computerPlayer = Player()
+        self.user_player = Player()
+        self.computer_player = Player()
         self.winner = None
     def play(self):
-        self.userPlayer.getName()
-        self.userPlayer.makeChoice()
+        self.user_player.get_name()
+        self.user_player.make_choice()
         
-        print(f"You chose {self.userPlayer.playerChoice}")
-        print(f"Your opponent chose {self.computerPlayer.playerChoice}")
+        print(f"You chose {self.user_player.player_choice}")
+        print(f"Your opponent chose {self.computer_player.player_choice}")
 
-        if self.userPlayer.playerChoice == self.computerPlayer.playerChoice:
+        if self.user_player.player_choice == self.computer_player.player_choice:
             self.winner = "Tie"
             print("It's a tie!")
-        elif self.userPlayer.playerChoice == "rock":
-            if self.computerPlayer.playerChoice == "scissors":
-                self.winner = self.userPlayer.playerName
+        elif self.user_player.player_choice == "rock":
+            if self.computer_player.player_choice == "scissors":
+                self.winner = self.user_player.player_name
                 print("Rock crushes scissors. You win!")
             else:
-                self.winner = self.computerPlayer.playerName
+                self.winner = self.computer_player.player_name
                 print("Paper covers rock. You lose.")
-        elif self.userPlayer.playerChoice == "paper":
-            if self.computerPlayer.playerChoice == "scissors":
-                self.winner = self.computerPlayer.playerName
+        elif self.user_player.player_choice == "paper":
+            if self.computer_player.player_choice == "scissors":
+                self.winner = self.computer_player.player_name
                 print("Scissors cuts paper. You lose.")
             else:
-                self.winner = self.userPlayer.playerName
+                self.winner = self.user_player.player_name
                 print("Paper covers rock. You win!")
-        elif self.userPlayer.playerChoice == "scissors":
-            if self.computerPlayer.playerChoice == "rock":
-                self.winner = self.computerPlayer.playerName
+        elif self.user_player.player_choice == "scissors":
+            if self.computer_player.player_choice == "rock":
+                self.winner = self.computer_player.player_name
                 print("Rock crushes scissors. You lose.")
             else:
-                self.winner = self.userPlayer.playerName
+                self.winner = self.user_player.player_name
                 print("Scissors cuts paper. You win!")

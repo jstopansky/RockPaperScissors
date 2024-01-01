@@ -1,26 +1,26 @@
 import random as random
 
-possibleChoices = ["rock", "paper", "scissors"]
+possible_choices = ["rock", "paper", "scissors"]
 
 class Player:
-    def __init__(self,playerName="Oponnent",playerChoice=random.choice(possibleChoices)):
-        self.playerName = playerName
-        self.playerChoice = playerChoice
-    def getName(self):
+    def __init__(self,player_name="Oponnent",player_choice=random.choice(possible_choices)):
+        self.player_name = player_name
+        self.player_choice = player_choice
+    def get_name(self):
         while True:
-            chosenName = input("What is your name? ")
-            if len(chosenName) < 1:
+            chosen_name = input("What is your name? ")
+            if len(chosen_name) < 1:
                 print("Please enter a name that is at least one (1) character long.")
             else:
-                self.playerName = chosenName
+                self.player_name = chosen_name
                 break
-    def makeChoice(self):
+    def make_choice(self):
         while True:
             chooses = input("Choose Rock, Paper, or Scissors: ").lower()
-            if chooses not in possibleChoices:
+            if chooses not in possible_choices:
                 print("That is not a valid choice. Please choose again.")
             else:
-                self.playerChoice = chooses
+                self.player_choice = chooses
                 break
-    def makeWinner(self):
-        self.isWinner = True
+    def make_winner(self):
+        self.is_winner = True
